@@ -1,0 +1,16 @@
+
+#!/bin/bash
+#Create Variable 
+States=('Georgia' 'South Carolina' 'Alabama,' 'Florida' 'North Carloina')
+
+#Create a loop that looks for Hawaii
+for state in ${States[@]};
+do
+        if [ state == 'Hawaii' ];
+        then
+        echo "Hawaii is the Best!"
+
+        else
+        echo "I'm not fond of Hawaii."
+        fi
+done
