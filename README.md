@@ -14,7 +14,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
-- ELK Configuration                                         20.92.215.38
+- ELK Configuration                                        
   - Beats in Use
   - Machines Being Monitored
 - How to Use the Ansible Build
@@ -25,10 +25,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-  -Having a load balancer in place ensures the website availability even if 1 web server goes down.
-  -Having a jump box limits access to more vulnerable systems. It is limited by IP address accessing it and ssh key to prevent
-   brute force password cracking attempts.
+
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the files and system metrics.
   - Filebeat monitors files on the Elk Server and reports any changes.
@@ -48,8 +45,8 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-  - 24.42.190.30
+Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from my public IP address:
+  - xxx.xxx.xxx.xxx
 
 Machines within the network can only be accessed by SSH.
 - The jumpbox can access the Elk server but only through SSH. The IP Address for the jumpbox is 10.0.0.4
@@ -58,7 +55,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name    | Publicly Accessible | Allowed IP Address |
 |---------|---------------------|--------------------|
-| Jumpbox | YES                 | 24.42.190.30       |
+| Jumpbox | YES                 | xxx.xxx.xxx.xxx    |
 | Web-1   | NO                  |                    |
 | Web-2   | NO                  |                    |
 | Elk     | NO                  |                    |
@@ -74,10 +71,6 @@ The playbook implements the following tasks:
   - uses pip to install docker module
   - increases memory to run Elk
   - downloads and launches Elk container
-
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-  - Images/Elk Docker
 
 ### Target Machines & Beats
 
